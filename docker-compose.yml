@@ -6,7 +6,7 @@ services:
     volumes:
      - /mnt/pgdata:/var/lib/postgresql/data
     environment:
-     - TZ=Australia/Brisbane
+     - TZ=Europe/London
   cache:
     build: ontocache
     container_name: ontocache
@@ -16,7 +16,7 @@ services:
       - "8080:80"
 #      - "8443:443"
     environment:
-      - TZ=Australia/Brisbane
+      - TZ=Europe/London
   ontoserver:
     image: aehrc/ontoserver:ctsa-5.0
     container_name: ontoserver
@@ -28,7 +28,7 @@ services:
       - authentication.oauth.endpoint.client_id.0=YOUR_NCTS_CLIENT_ID
       - authentication.oauth.endpoint.client_secret.0=YOUR_NCTS_CLIENT_SECRET
       - JAVA_OPTS=-Xmx8G
-      - TZ=Australia/Brisbane
+      - TZ=Europe/London
     volumes:
      - /mnt/onto:/var/onto
     logging:
