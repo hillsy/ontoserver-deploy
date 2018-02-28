@@ -23,10 +23,9 @@ services:
     depends_on:
      - db
     environment:
+      - atom.syndication.feedLocation=https://ontoserver.csiro.au/synd/syndication.xml
       - ONTOSERVER_INSECURE=true
-      - ontoserver.fhir.base=https://your.domain.here/myfhir
-      - authentication.oauth.endpoint.client_id.0=YOUR_NCTS_CLIENT_ID
-      - authentication.oauth.endpoint.client_secret.0=YOUR_NCTS_CLIENT_SECRET
+      - ontoserver.fhir.base=http://ontoserver.dataproducts.nhs.uk/myfhir
       - JAVA_OPTS=-Xmx8G
       - TZ=Europe/London
     volumes:
